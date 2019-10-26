@@ -4,7 +4,9 @@ import { PanelHeader, FormLayout, FormStatus, Button, Input, PanelHeaderBack, Vi
   Progress, File, Tabs, TabsItem, Avatar } from '@vkontakte/vkui';
 import './TabAccount.css';
 import TabAdmin from './TabAdmin';
-
+var moment = require('moment');
+require('moment/locale/ru');
+moment.locale('ru');
 
 
 export default class TabAccount extends Component {
@@ -48,7 +50,8 @@ export default class TabAccount extends Component {
 	
   checkboxChange = () => {
 	  // ХЕНДЛЕР ДЛЯ ЧЕКБОКСА
-	  fetch('http://127.0.0.1:8000/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
+    console.log("111", global.user_info)
+    fetch('http://127.0.0.1:8000/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
       method: 'PUT', // Method itself
       headers: {
       'Accept': 'application/json',
@@ -80,6 +83,7 @@ export default class TabAccount extends Component {
   
     if (!flag){
       console.log('flag')
+      console.log("111", global.user_info)
       fetch('http://127.0.0.1:8000/api/v1/vlt/create/', {
       method: 'POST', // Method itself
       headers: {
@@ -98,7 +102,7 @@ export default class TabAccount extends Component {
 
     }
 
-    console.log(global.user_info)
+    console.log("222",global.user_info)
     console.log(flag)
     var searcher = {};
     for (var i = 0; i < global.shelters.length; i++){
@@ -112,11 +116,11 @@ export default class TabAccount extends Component {
                 <div className="Account__avatar">
                   <img src={userInfo.photo_200} />
                 </div>
-                <div className="Account__name">{userInfo.first_name} {userInfo.last_name}, level {1}</div>
+                <div className="Account__name">{userInfo.first_name} {userInfo.last_name}</div>
+              <div className="Account__name Account__level"> Уровень {1}</div>
               </div>
 			  <div className="Account_progress">
-			    <progress value={global.vlt[global.vlt_i].karma} max={300}></progress><br/>
-				{global.vlt[global.vlt_i].karma}/{300}
+
 			  </div>
             </div>
 
@@ -132,7 +136,7 @@ export default class TabAccount extends Component {
               <FormLayout>
                 <Input 
                   top="Дата рождения"
-                  value={userInfo.bdate}
+                  value={moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
                   onChange={() => {}}
                 />
                 <Input 
@@ -140,6 +144,20 @@ export default class TabAccount extends Component {
                   value={ global.phone_number }
                   onChange={() => {}}
                 />
+                <div className="User__info">
+                  <div className="User__bdate">
+                    <div className="User__bdate__title">
+                      День рождения:
+                    </div>
+                    {moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
+                  </div>
+                  <div className="User__phone__number">
+                    <div className="User__number__title">
+                      Номер телефона:
+                    </div>
+                    {global.phone_number}
+                  </div>
+                </div>
                 <center>
                   <img src='https://barcode.tec-it.com/barcode.ashx?data=AA1234' alt="Карта волонтера" />
                 </center>

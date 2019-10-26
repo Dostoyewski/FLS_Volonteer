@@ -9,7 +9,7 @@ export default function AddressForm() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        Добавить событие
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -26,6 +26,20 @@ export default function AddressForm() {
           }}>
           </input>
           </Grid>
+        <Grid item xs={12} sm={6}>
+          <span class="textView">Порода собаки</span>
+          <input type="text" value={global.that.state.breed} onChange={(e)=> {
+            global.that.setState({title: e.target.value})
+          }}>
+          </input>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <span class="textView">Размер собаки</span>
+          <input type="text"  value={global.that.state.breed} onChange={(e)=> {
+            global.that.setState({title: e.target.value})
+          }}>
+          </input>
+        </Grid>
           <span class="textView">Описание</span>
         <input type="text" value = {global.that.state.description} onChange={(e)=> {
             global.that.setState({description: e.target.value})
@@ -36,15 +50,25 @@ export default function AddressForm() {
           
         </Grid>
         <Grid item xs={12} sm={6}>
-          <br/>  
-          <FormControlLabel 
-            control={<Checkbox color="seßcondary" name="saveAddress" value="yes" 
+          <br/>
+          <FormControlLabel
+            control={<Checkbox color="seßcondary" name="saveAddress" value="yes"
             onChange={(e)=>{
               global.that.setState({allergy: e.target.value})
             }} />}
             label="Это задание может быть выполнено алергиком"
           />
         </Grid>
+      <Grid item xs={12} sm={6}>
+        <br/>
+        <FormControlLabel
+            control={<Checkbox color="seßcondary" name="is_vaccinated" value="yes"
+                               onChange={(e)=>{
+                                 global.that.setState({is_vaccinated: e.target.value})
+                               }} />}
+            label="Животное привито"
+        />
+      </Grid>
     </React.Fragment>
   );
 }
