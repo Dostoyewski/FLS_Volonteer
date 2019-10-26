@@ -1,12 +1,26 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { PanelHeader, Button, PanelHeaderBack, Separator, Footer, PopoutWrapper } from '@vkontakte/vkui';
-import { PANEL_MAIN, PANEL_EVENT_SENT, STATUS_DEFAULT, STATUS_REQUESTED, STATUS_APPROVED, PANEL_EVENT_INFO } from '../constants';
+import {
+  PANEL_MAIN,
+  PANEL_EVENT_SENT,
+  STATUS_DEFAULT,
+  STATUS_REQUESTED,
+  STATUS_APPROVED,
+  PANEL_EVENT_INFO,
+  TAB_EVENTS, TAB_WORK, TAB_MAP, TAB_ACCOUNT, TAB_LOST, TAB_DONATE
+} from '../constants';
 import { EventPropType } from '../base';
 import Role from '../Components/Role';
 import './EventInfo.css';
 import Icon24Qr from '@vkontakte/icons/dist/24/qr';
 import vkQr from 'vk-qr';
+import TabEvents from "./TabEvents";
+import TabWork from "./TabWork";
+import TabMap from "./TabMap";
+import TabAccount from "./TabAccount";
+import TabLost from "./TabLost";
+import TabDonate from "./TabDonate";
 
 export default class EventInfo extends Component {
   static propTypes = {
@@ -19,10 +33,24 @@ export default class EventInfo extends Component {
     showPopout: PropTypes.func,
   };
 
+  getTabComponent = () => {
+    const { activeTab } = this.props;
+
+    switch (activeTab) {
+           case TAB_DONATE:
+        return TabDonate;
+
+      default:
+        return <div>Что-то пошло не так, нет такой вкладки</div>;
+    }
+  }
+
   render() {
     const { event } = this.props;
-	
-	var shelter;
+    const { activeTab } = this.props;
+    const TabComponent = this.getTabComponent();
+
+    var shelter;
 	for (var i=0; i< global.shelters.length; i++){
 		if (event.shelter === global.shelters[i].id){
 			shelter = global.shelters[i];
@@ -67,6 +95,9 @@ export default class EventInfo extends Component {
             </div>}
 
             <div className="EventInfo__title">{event.title}</div>
+            <a className="btn-large waves-effect waves-light red" onClick={this.onDonate}><i
+                className="large material-icons">attach_money</i></a>
+
             {event.place && <div className="EventInfo__where">{event.place}<br/>{shelter===undefined ? (<div></div>) : shelter.title }<br/>{event.date}</div>}
 
           
