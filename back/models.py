@@ -42,7 +42,7 @@ class Task(models.Model):
     allergy = models.BooleanField(default=True)
     title = models.TextField(max_length=100, blank=True, default='Не заполнено')
     status = models.IntegerField(choices=STATUS, default=1)
-    user_id = models.IntegerField(default=0)
+    user_id = models.CharField(max_length=1200, blank=True, default='')
 
 class Post(models.Model):
     description = models.CharField(max_length=1200,default='Не задано')

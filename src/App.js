@@ -65,6 +65,7 @@ export default class App extends Component {
       .then(response => response.json())
       .then(result => {
         global.vlt = result;
+        
       },
       // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
       // чтобы не перехватывать исключения из ошибок в самих компонентах.
@@ -224,8 +225,8 @@ export default class App extends Component {
 			
 			data.exp = 0;
 			data.level = 3;
-			global.userInfo = data;
-      global.userInfo.isAdmin = false;
+      global.userInfo = data;
+      //global.userInfo.isAdmin = false;
       
 			this.setState({ userInfo: data });
 			break;
@@ -303,6 +304,7 @@ export default class App extends Component {
   };
 
   render() {
+    
     return (
       <Root activeView={this.state.activeView} popout={this.state.popout}>
         <View id={VIEW_ENTER} activePanel={this.state.activePanels[VIEW_ENTER]}>
