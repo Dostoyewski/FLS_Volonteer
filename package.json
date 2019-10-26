@@ -1,0 +1,57 @@
+{
+  "name": "Barbos_Hackaton",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://03regionkruto.github.io/VK_New/",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "gh-pages": "^2.1.1",
+    "react-hot-loader": "^4.9.0",
+    "react-scripts": "^3.1.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "@vkontakte/icons": "^1.10.0",
+    "@vkontakte/vk-connect": "^1.6.5",
+    "@vkontakte/vk-connect-promise": "^1.1.0",
+    "@vkontakte/vk-qr": "^2.0.8",
+    "@vkontakte/vkui": "^2.32.3",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.3",
+    "chalk": "^2.4.2",
+    "core-js": "^3.1.4",
+    "got": "^9.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-perfect-scrollbar": "^1.5.3",
+    "react-yandex-maps": "^4.0.1",
+    "socket.io": "^1.7.4",
+    "sync-request": "^6.1.0",
+    "vk-qr": "^1.0.0",
+    "vkui": "^1.1.1",
+    "ymaps": "^0.2.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
