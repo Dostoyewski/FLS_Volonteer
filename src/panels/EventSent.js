@@ -42,7 +42,7 @@ export default class EventSent extends Component {
               <Button size="xl" onClick={() => {
                 this.props.showPopout(<ScreenSpinner />);
                 setTimeout(() => {
-                  this.props.hidePopout();
+                  
                   this.props.update(PANEL_MAIN, { activeTab: TAB_WORK });
                   this.props.updateEventStatus(this.props.event.id, STATUS_REQUESTED);
                   this.props.go(PANEL_MAIN);

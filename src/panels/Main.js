@@ -9,12 +9,12 @@ import TabWork from './TabWork';
 import TabLost from './TabLost';
 import TabDonate from './TabDonate';
 import Icon20CalendarOutline from '@vkontakte/icons/dist/20/calendar_outline';
-import Icon20WorkOutline from '@vkontakte/icons/dist/20/work_outline';
-import Icon24Globe from '@vkontakte/icons/dist/24/globe';
+
 import Icon28Profile from '@vkontakte/icons/dist/28/profile';
 import Icon20ArticleOutline from '@vkontakte/icons/dist/20/article_outline';
 import Icon20PlaceOutline from '@vkontakte/icons/dist/20/place_outline';
 import Icon24BrowserForward from '@vkontakte/icons/dist/24/browser_forward';
+import Icon24Replay from '@vkontakte/icons/dist/24/replay';
 import connect from '@vkontakte/vk-connect';
 
 export default class Main extends Component {
@@ -33,6 +33,11 @@ export default class Main extends Component {
       activeTab: e.currentTarget.dataset.id,
     });
   };
+
+  refreshPage(){
+    window.location.reload();
+  }
+
   onDonate = (e) => {
     /*connect.send("VKWebAppInit", {});
     connect.send("VKWebAppOpenPayForm", {"app_id": 7175703, "action": "pay-to-group", 
@@ -84,8 +89,9 @@ export default class Main extends Component {
 			<div class="fixed-action-btn" style={{bottom:60}}>
 				<a class="btn-floating btn-large waves-effect waves-light red" onClick={this.onDonate}><i class="large material-icons">attach_money</i></a>
 			</div>
-	
-		<FixedLayout vertical="bottom">
+        {/*<a className="refresh__page" onClick={this.refreshPage}><Icon24Replay width={25} height={25}/></a>*/}
+
+        <FixedLayout vertical="bottom">
           <Tabs>
             <TabsItem
               data-id={TAB_EVENTS}

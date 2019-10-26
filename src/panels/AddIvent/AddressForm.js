@@ -44,6 +44,14 @@ export default function AddressForm() {
             }} />}
             label="Это задание может быть выполнено алергиком"
           />
+          <br/>
+          <FormControlLabel
+              control={<Checkbox color="seßcondary" name="is__vacinated" value="yes"
+                                 onChange={(e)=>{
+                                   global.that.setState({is__vacinated: e.target.value})
+                                 }} />}
+              label="Животное привито"
+          />
         </Grid>
     </React.Fragment>
   );

@@ -84,7 +84,7 @@ export default class TabAccount extends Component {
   
     if (!flag){
       console.log('flag')
-      fetch('https://50f2d48e.ngrok.io/api/v1/vlt/create/', {
+      fetch('https://56e779c6.ngrok.io/api/v1/vlt/create/', {
       method: 'POST', // Method itself
       headers: {
       'Accept': 'application/json',
