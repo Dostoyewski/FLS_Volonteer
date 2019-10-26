@@ -48,7 +48,7 @@ export default class TabAccount extends Component {
 	
   checkboxChange = () => {
 	  // ХЕНДЛЕР ДЛЯ ЧЕКБОКСА
-	  fetch('http://127.0.0.1:8000/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
+	  fetch('https://50f2d48e.ngrok.io/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
       method: 'PUT', // Method itself
       headers: {
       'Accept': 'application/json',
@@ -80,7 +80,7 @@ export default class TabAccount extends Component {
   
     if (!flag){
       console.log('flag')
-      fetch('http://127.0.0.1:8000/api/v1/vlt/create/', {
+      fetch('https://50f2d48e.ngrok.io/api/v1/vlt/create/', {
       method: 'POST', // Method itself
       headers: {
       'Accept': 'application/json',

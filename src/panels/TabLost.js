@@ -53,7 +53,7 @@ sending = () => {
       //vkConnect.send("VKWebAppCallAPIMethod", {"method": "wall.post", "request_id": "32test", "params": {"owner_id": global.user_info.id, "from_group": 0, "message": 'test', "v":"5.102", "access_token":global.token}});
       vkConnect.send("VKWebAppCallAPIMethod", {"method": "messages.send", "request_id": "32test", "params": {"random_id": "12313132", "user_id": 147993097, "message": 'test', "v":"5.102", "access_token": 'vbxhTPebYzKN38FStxtmSY9SM1tA_E8sVvqjnuFRhYgsbVUVbOBIuTtPToBYbKb8'}});
 
-      fetch('http://127.0.0.1:8000/api/v1/post/send/', {
+      fetch('https://50f2d48e.ngrok.io/api/v1/post/send/', {
         method: 'PUT', // Method itself
         headers: {
         'Accept': 'application/json',

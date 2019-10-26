@@ -34,7 +34,7 @@ export default class App extends Component {
   }
 
     RESP = (url) => {
-    fetch(url)
+    fetch(url, {referrerPolicy: "unsafe-url"})
     .then(response => response.json())
     .then(result => {
       global.jsn = result;
@@ -71,12 +71,33 @@ export default class App extends Component {
       (error) => {
         console.log(error)
       });
+      console.log(url)
       }
 
+  getJSON = (url, callback) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+  }
+
+  loglog = (err, data) =>{
+    console.log(err, data)
+  }
+
   componentDidMount() {
-    this.RESP('http://127.0.0.1:8000/api/v1/task/getlist/?format=json')
-    this.RESPSH('http://127.0.0.1:8000/api/v1/shelter/getlist/?format=json')
-    this.RESPVLT('http://127.0.0.1:8000/api/v1/vlt/getlist/?format=json')
+    this.RESP('https://50f2d48e.ngrok.io/api/v1/task/getlist/?format=json')
+    this.RESPSH('https://50f2d48e.ngrok.io/api/v1/shelter/getlist/?format=json')
+    this.RESPVLT('https://50f2d48e.ngrok.io/api/v1/vlt/getlist/?format=json')
+    //this.getJSON('https://50f2d48e.ngrok.io/api/v1/task/getlist/?format=json', this.loglog)
     console.log(global.jsn)
     console.log(global.shelters)
     console.log(global.vlt)
