@@ -103,8 +103,8 @@ export default class App extends Component {
     console.log(global.vlt)
     vkConnect.subscribe(this.connectListener);
     vkConnect.send('VKWebAppGetUserInfo', {});
-    vkConnect.subscribe(this.connectListener);
-    vkConnect.send('VKWebAppGetUserInfo', {});
+    /*vkConnect.subscribe(this.connectListener);
+    vkConnect.send('VKWebAppGetUserInfo', {});*/
 
     vkConnectPromise
       .send('VKWebAppGetGeodata')

@@ -4,6 +4,9 @@ import { PanelHeader, FormLayout, FormStatus, Button, Input, PanelHeaderBack, Vi
   Progress, File, Tabs, TabsItem, Avatar } from '@vkontakte/vkui';
 import './TabAccount.css';
 import TabAdmin from './TabAdmin';
+var moment = require('moment');
+require('moment/locale/ru');
+moment.locale('ru');
 
 
 
@@ -112,7 +115,8 @@ export default class TabAccount extends Component {
                 <div className="Account__avatar">
                   <img src={userInfo.photo_200} />
                 </div>
-                <div className="Account__name">{userInfo.first_name} {userInfo.last_name}, level {1}</div>
+                <div className="Account__name">{userInfo.first_name} {userInfo.last_name}</div>
+                <div className="Account__name Account__level"> Уровень {1}</div>
               </div>
 			  <div className="Account_progress">
 			    <progress value={global.vlt[global.vlt_i].karma} max={300}></progress><br/>
@@ -132,7 +136,7 @@ export default class TabAccount extends Component {
               <FormLayout>
                 <Input 
                   top="Дата рождения"
-                  value={userInfo.bdate}
+                  value={moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
                   onChange={() => {}}
                 />
                 <Input 

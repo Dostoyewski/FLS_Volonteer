@@ -12,6 +12,9 @@ import Icon20CalendarOutline from '@vkontakte/icons/dist/20/calendar_outline';
 import Icon20WorkOutline from '@vkontakte/icons/dist/20/work_outline';
 import Icon24Globe from '@vkontakte/icons/dist/24/globe';
 import Icon28Profile from '@vkontakte/icons/dist/28/profile';
+import Icon20ArticleOutline from '@vkontakte/icons/dist/20/article_outline';
+import Icon20PlaceOutline from '@vkontakte/icons/dist/20/place_outline';
+import Icon24BrowserForward from '@vkontakte/icons/dist/24/browser_forward';
 import connect from '@vkontakte/vk-connect';
 
 export default class Main extends Component {
@@ -73,7 +76,7 @@ export default class Main extends Component {
 
     return (
       <Fragment>
-        <PanelHeader>ПОМОГИ БАРБОСУ</PanelHeader>
+        <PanelHeader>Помоги Барбосу</PanelHeader>
 
         <TabComponent
           {...this.props}
@@ -94,19 +97,19 @@ export default class Main extends Component {
               data-id={TAB_WORK}
               selected={activeTab === TAB_WORK}
               onClick={this.onTabClick}
-            ><Icon20WorkOutline width={25} height={25}/></TabsItem>
+            ><Icon20ArticleOutline width={25} height={25}/></TabsItem>
 
             <TabsItem
               data-id={TAB_MAP}
               selected={activeTab === TAB_MAP}
               onClick={this.onTabClick}
-            ><Icon24Globe width={25} height={25}/></TabsItem>
+            ><Icon20PlaceOutline width={25} height={25}/></TabsItem>
 
             <TabsItem
               data-id={TAB_LOST}
               selected={activeTab === TAB_LOST}
               onClick={this.onTabClick}
-            > <i class="material-icons">error_outline</i></TabsItem>
+            > <Icon24BrowserForward width={25} height={25}/></TabsItem>
 
 
             <TabsItem

@@ -22,9 +22,9 @@ export default class TabMap extends Component {
                 <Map 
                   width={1000}
                   height={640}
-                  defaultState={{ center: [66.540470, 66.707990], zoom: 12 }} >
+                  defaultState={{ center: [59.935333, 30.254524], zoom: 11 }} >
                   <Placemark {... {
-                    geometry: [66.539792, 66.588339],
+                    geometry: [59.902237, 30.288169],
                     properties: {
                     hintContent: 'Улица Манчинского, 19',
                     balloonContent: 'Приют "Лучшие друзья"' 
@@ -34,7 +34,7 @@ export default class TabMap extends Component {
                   }
                   />
                   <Placemark {...{
-                      geometry: [66.5299819,66.6093746],
+                      geometry: [60.003489, 30.332801],
                       properties: {
                           hintContent: 'Улица Манчинского, 19',
                           balloonContent: 'Ветеринарная клиника "Друзья человека"'
@@ -44,7 +44,7 @@ export default class TabMap extends Component {
                   } 
                   />
                   <Placemark {...{
-                      geometry: [66.5341446,66.6407188],
+                      geometry: [59.954279, 30.437858],
                       properties: {
                           hintContent: 'Улица имени Василия Подшибякина, 46Б',
                           balloonContent: 'Товары для животных '
