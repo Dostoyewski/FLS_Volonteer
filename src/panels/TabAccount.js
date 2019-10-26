@@ -155,9 +155,9 @@ export default class TabAccount extends Component {
                     {moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
                   </div>
                   <div className="User__phone__number">
-                    <h3 className="User__number title">
+                    <h5 className="User__number title">
                       Номер телефона:
-                    </h3>
+                    </h5>
                     {global.phone_number}
                   </div>
                 </div>
