@@ -60,14 +60,15 @@ sending = () => {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          "id": 14,
           "description": document.getElementById("dsc").value,
           "place": document.getElementById("place").value,
           "custom": document.getElementById("prm").value,
           "lat": global.lat,
           "lon": global.lon
-        })});
+      })});
       
-}  
+  }  
 
   render() {
     const { userInfo } = this.props;
