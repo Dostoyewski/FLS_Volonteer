@@ -80,3 +80,7 @@ progress[value]::-webkit-progress-value {
   border-radius: 10px;
   padding: 10px;
 }
+
+h5 {
+  font-color: #4a76a8;
+}

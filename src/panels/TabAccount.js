@@ -136,28 +136,19 @@ export default class TabAccount extends Component {
                     {global.vlt[global.vlt_i].karma}/{1000}
                   </div>
                 </div>
-                <Input 
-                  top="День рождения"
-                  value={moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
-                  onChange={() => {}}
-                />
-                <Input 
-                  top="Номер телефона"
-                  value={ global.phone_number }
-                  onChange={() => {}}
-                />
 
+                {/*<img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />*/}
                 <div className="User__info">
                   <div className="User__bdate">
-                    <h5 className="User__bdate title">
+                    <h6 className="User__bdate title">
                       День рождения:
-                    </h5>
+                    </h6>
                     {moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
                   </div>
                   <div className="User__phone__number">
-                    <h5 className="User__number title">
+                    <h6 className="User__number title">
                       Номер телефона:
-                    </h5>
+                    </h6>
                     {global.phone_number}
                   </div>
                 </div>
