@@ -113,20 +113,6 @@ export default class TabAccount extends Component {
         <Fragment>
         <div className="Account">
           <div className="Account__in">
-            <div className="Account__header">
-              <div className="Account__hero">
-                <div className="Account__avatar">
-                  <img src={userInfo.photo_200} />
-                </div>
-                <div className="Account__name">{userInfo.first_name} {userInfo.last_name}</div>
-                <div className="Account__name Account__level"> Уровень {1}</div>
-              </div>
-			  <div className="Account_progress">
-			    <progress value={global.vlt[global.vlt_i].karma} max={1000}></progress><br/>
-				{global.vlt[global.vlt_i].karma}/{1000}
-			  </div>
-            </div>
-
             <div className="Account__data">
               {/* <div className="Account__dataTabs">
                 <Tabs>
@@ -137,8 +123,21 @@ export default class TabAccount extends Component {
               </div> */}
 
               <FormLayout>
+                <div className="Account__header">
+                  <div className="Account__hero">
+                    <div className="Account__avatar">
+                      <img src={userInfo.photo_200} />
+                    </div>
+                    <div className="Account__name">{userInfo.first_name} {userInfo.last_name}</div>
+                    <div className="Account__name Account__level"> Уровень {1}</div>
+                  </div>
+                  <div className="Account_progress">
+                    <progress value={global.vlt[global.vlt_i].karma} max={1000}></progress><br/>
+                    {global.vlt[global.vlt_i].karma}/{1000}
+                  </div>
+                </div>
                 <Input 
-                  top="Дата рождения"
+                  top="День рождения"
                   value={moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
                   onChange={() => {}}
                 />
@@ -147,6 +146,21 @@ export default class TabAccount extends Component {
                   value={ global.phone_number }
                   onChange={() => {}}
                 />
+
+                <div className="User__info">
+                  <div className="User__bdate">
+                    <h5 className="User__bdate title">
+                      День рождения:
+                    </h5>
+                    {moment(userInfo.bdate, "DD-MM-YYYY").format("DD MMMM")}
+                  </div>
+                  <div className="User__phone__number">
+                    <h3 className="User__number title">
+                      Номер телефона:
+                    </h3>
+                    {global.phone_number}
+                  </div>
+                </div>
                 <center>
                   <img src='https://barcode.tec-it.com/barcode.ashx?data=AA1234' alt="Карта волонтера" />
                 </center>
