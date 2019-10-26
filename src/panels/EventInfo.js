@@ -84,7 +84,7 @@ export default class EventInfo extends Component {
 																			 headers: {
 																			  'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
 																			 },
-																			 body: JSON.stringify({'id': event.id, 'status': 2, 'user_id': global.userInfo.id}) })
+																			 body: JSON.stringify({'id': event.id, 'status': 2, 'user_id': toString(global.userInfo.id)}) })
                 this.props.update(PANEL_EVENT_SENT, { event });
                 this.props.go(PANEL_EVENT_SENT);
               }}>Подать заявку</Button>}
@@ -112,7 +112,16 @@ export default class EventInfo extends Component {
 																			  'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
 																			 },
 																			 body: JSON.stringify({'id': event.id, 'status': 3}) })
-				global.userInfo.exp += event.exp;
+        //global.userInfo.exp += event.exp;
+        for (var i = 0; i < global.vlt.length; i++){
+          if (global.vlt[i].urlVK === (global.user_info.id).toString()) {
+            global.vlt_i = i;
+          }
+        }
+
+        global.vlt[global.vlt_i].karma += event.exp;
+
+        console.log(global.vlt[global.vlt_i].karma)
 				fetch('https://50f2d48e.ngrok.io/api/v1/task/getlist/?format=json')
 				.then(response => response.json())
 				.then(result => {

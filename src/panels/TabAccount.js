@@ -74,7 +74,8 @@ export default class TabAccount extends Component {
 		    global.vlt_i = i;
         flag = true;
         global.userInfo.isAdmin = global.vlt[i].isAdmin;
-		console.log(global.vlt[global.vlt_i]);
+        console.log(global.vlt[global.vlt_i]);
+        console.log(global.userInfo.isAdmin)
       }
     } 
   
@@ -98,6 +99,8 @@ export default class TabAccount extends Component {
 
     }
 
+    const isAdmin = true;
+
     console.log(global.user_info)
     console.log(flag)
     var searcher = {};
@@ -115,8 +118,8 @@ export default class TabAccount extends Component {
                 <div className="Account__name">{userInfo.first_name} {userInfo.last_name}, level {1}</div>
               </div>
 			  <div className="Account_progress">
-			    <progress value={global.vlt[global.vlt_i].karma} max={300}></progress><br/>
-				{global.vlt[global.vlt_i].karma}/{300}
+			    <progress value={global.vlt[global.vlt_i].karma} max={1000}></progress><br/>
+				{global.vlt[global.vlt_i].karma}/{1000}
 			  </div>
             </div>
 
@@ -150,8 +153,7 @@ export default class TabAccount extends Component {
 				  </label>
 				</p>
         <div className="Account_admin">
-              {userInfo.id in searcher &&
-                <Button
+              {global.userInfo.isAdmin && (<Button
                 variant="contained"
                 color="primary"
                 onClick={() => 
@@ -160,8 +162,10 @@ export default class TabAccount extends Component {
                 }}
             >
                 Страница администратора
-              </Button>
-              }
+              </Button>)}
+                
+              
+              
         </div>
               </FormLayout>
             </div>

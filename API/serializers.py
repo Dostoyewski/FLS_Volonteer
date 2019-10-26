@@ -79,6 +79,6 @@ class TaskDetailSerializer(serializers.ModelSerializer):
         instance.allergy = validated_data.get('allergy', instance.allergy)
         instance.title = validated_data.get('title', instance.title)
         instance.status = validated_data.get('status', instance.status)
-        instance.user_id = validated_data.get('user_id', instance.user_id)
+        instance.user_id = str(instance.user_id) + ',' + str(validated_data.get('user_id', instance.user_id))
         instance.save()
         return instance
