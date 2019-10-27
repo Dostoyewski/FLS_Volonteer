@@ -4,7 +4,8 @@ import { PanelHeader, FormLayout, FormStatus, Button, Input, PanelHeaderBack, Vi
   Progress, File, Tabs, TabsItem, Avatar } from '@vkontakte/vkui';
 import vkConnectPromise from '@vkontakte/vk-connect-promise';
 import vkConnect from '@vkontakte/vk-connect';
-import "./TabLost.css"; 
+import "./TabLost.css";
+import TabAdmin from "./TabAdmin";
 
 export default class TabLost extends Component {
   static propTypes = {
@@ -85,34 +86,60 @@ sending = () => {
     const { userInfo } = this.props;
       const startPage = (
         <Fragment>
-        
+          <div>
+            <center>
+              {!this.state.post &&
+              <form>
+                <div className="input-field col s12">
+                  <textarea id="dsc" className="materialize-textarea"></textarea>
+                  <label htmlFor="dsc">Описание проблемы</label>
+                </div>
+                <div className="input-field col s12">
+                  <textarea id="place" className="materialize-textarea"></textarea>
+                  <label htmlFor="place">Примерное местоположение</label>
+                </div>
+                <div className="input-field col s12">
+                  <textarea id="prm" className="materialize-textarea "></textarea>
+                  <label htmlFor="prm">Особые приметы</label>
+                </div>
+                <Button size="xl" value='Сообщить' onClick={() => {
+                  this.sending();
+                  this.setState({post: true})
+                }}>Сообщить</Button>
+                <br />
+                <div className="Account_admin">
+                   <Button size="xl"
+                      onClick={() =>
+                      {
+                        this.setState({loadWorksheep: true})
+                      }}
+                  >
+                    Создать задание
+                  </Button>
+
+
+
+                </div>
+              </form>
+              }
+              {this.state.post &&
+              <label className='posted'>Ваш пост отправлен на обработку!</label>
+              }
+            </center>
+          </div>
+
       </Fragment>
       );
     return (
-      <div>
-          <center>
-          {!this.state.post &&
-        <form>
-        <div class="input-field col s12">
-          <textarea id="dsc" class="materialize-textarea"></textarea>
-          <label for="dsc">Описание проблемы</label>
-        </div>
-        <div class="input-field col s12">
-          <textarea id="place" class="materialize-textarea"></textarea>
-          <label for="place">Примерное местоположение</label>
-        </div><div class="input-field col s12">
-          <textarea id="prm" class="materialize-textarea "></textarea>
-          <label for="prm">Особые приметы</label>
-        </div>
-          <Button size="xl" value='Сообщить' onClick={()=>{this.sending(); this.setState({post: true})}}>Сообщить</Button>
-        </form> 
-        }
-         {this.state.post &&
-        <label class='posted'>Ваш пост отправлен на обработку!</label>
-        }
-           </center>
-      </div>
+        <div>{ this.state.loadWorksheep ? <WorksheetSelector/> : startPage }</div>
+
     );
   }
   }
 
+
+function WorksheetSelector(props) {
+  return (
+      <TabAdmin></TabAdmin>
+  );
+}

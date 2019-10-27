@@ -31,9 +31,14 @@ export default function AddressForm() {
             global.that.setState({description: e.target.value})
           }}>
           </input>
+          <span className="textView">Порода животного</span>
+          <input type="text" value={global.that.state.breed} onChange={(e) => {
+              global.that.setState({breed: e.target.value})
+          }}>
+          </input>
           </Grid>
         <Grid item xs={12} sm={6}>
-          
+
         </Grid>
         <Grid item xs={12} sm={6}>
           <br/>  

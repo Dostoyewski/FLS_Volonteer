@@ -82,7 +82,7 @@ export default class TabMap extends Component {
   },
   {
     "id": 2,
-    "title": "Приют города Салехарда",
+    "title": "Приют города Санкт-Петербурга",
     "description": "Приют для бездомных животных",
     "image": "https://50f2d48e.ngrok.io/api/v1/shelter/getlist/images/no-img.jpg",
     "members": "",

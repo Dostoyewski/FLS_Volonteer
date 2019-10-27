@@ -150,18 +150,20 @@ export default class TabAccount extends Component {
                       Номер телефона:
                     </h6>
                     {global.phone_number}
+                    <p>&emsp;
+                      <label>
+                        <input type="checkbox" onChange={this.checkboxChange}/>
+                        <span>Наличие аллергии на животных {}</span>
+                      </label>
+                    </p>
                   </div>
                 </div>
                 <center>
                   <img src='https://barcode.tec-it.com/barcode.ashx?data=AA1234' alt="Карта волонтера" />
                 </center>
-				 <p>&emsp;	    
-				  <label>
-					<input type="checkbox" onChange={this.checkboxChange}/>
-					<span>Наличие аллергии на животных {}</span>
-				  </label>
-				</p>
-        <div className="Account_admin">
+
+
+{/*        <div className="Account_admin">
               {global.userInfo.isAdmin && (<Button
                 variant="contained"
                 color="primary"
@@ -175,7 +177,7 @@ export default class TabAccount extends Component {
                 
               
               
-        </div>
+        </div>*/}
               </FormLayout>
             </div>
           </div>
