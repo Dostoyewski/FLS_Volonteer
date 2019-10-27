@@ -62,7 +62,7 @@ render() {
     return (
       <Fragment>
           <form class="donate__form">
-              <img src="https://sun9-31.userapi.com/c854528/v854528857/13c744/0Pl1pDkDsi0.jpg" class="donate_cat"/>
+              {/*<img src="https://sun9-31.userapi.com/c854528/v854528857/13c744/0Pl1pDkDsi0.jpg" class="donate_cat"/>*/}
               <h6>Помогите приютам</h6>
         {global.shelters.map((shelter) => {
           return (

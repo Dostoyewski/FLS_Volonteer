@@ -82,17 +82,22 @@ export default class Main extends Component {
     return (
       <Fragment>
         <PanelHeader>Помоги Барбосу</PanelHeader>
-
         <TabComponent
           {...this.props}
         />
 			<div class="fixed-action-btn" style={{bottom:60}}>
 				<a class="btn-floating btn-large waves-effect waves-light" onClick={this.onDonate}>
                   {/*<i class="large material-icons">attach_money</i>*/}
-                  <img src="https://www.custom-magnets.com/media/catalog/product/cache/1/image/6b23a3c52a9e726a201d0b96a32ea498/d/o/dogbowl1.jpg"/>
+                  <img src="https://sun9-31.userapi.com/c857328/v857328281/20302/L6VRcd72khg.jpg"/>
 				</a>
 			</div>
-        {/*<a className="refresh__page" onClick={this.refreshPage}><Icon24Replay width={25} height={25}/></a>*/}
+        <div className="fixed-action-btn" style={{bottom: 60, left: 0}}>
+          <a className="btn-floating btn-large waves-effect waves-light" onClick={this.refreshPage}>
+            <img src="https://icon-library.net/images/icon-refresh/icon-refresh-28.jpg"/>
+          </a>
+        </div>
+
+
 
         <FixedLayout vertical="bottom">
           <Tabs>
