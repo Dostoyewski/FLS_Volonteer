@@ -4,6 +4,8 @@ import { PanelHeader, FormLayout, FormStatus, Button, Input, PanelHeaderBack, Vi
   Progress, File, Tabs, TabsItem, Avatar } from '@vkontakte/vkui';
 import vkConnectPromise from '@vkontakte/vk-connect-promise';
 import connect from '@vkontakte/vk-connect';
+import "./TabDonate.css"
+
 
 
 export default class TabDonate extends Component {
@@ -59,7 +61,9 @@ render() {
     const items = this.props.events;
     return (
       <Fragment>
-          <form>
+          <form class="donate__form">
+              <img src="https://sun9-31.userapi.com/c854528/v854528857/13c744/0Pl1pDkDsi0.jpg" class="donate_cat"/>
+              <h6>Помогите приютам</h6>
         {global.shelters.map((shelter) => {
           return (
             <p>&emsp;	    
@@ -71,7 +75,7 @@ render() {
                   document.getElementById(shelter.id).checked=true;
                   global.current_id = shelter.urlVK;
                 }}/>
-              <span> {shelter.title}</span>
+              <span class="shelter__title"> {shelter.title}</span>
             </label>
             
           </p>
