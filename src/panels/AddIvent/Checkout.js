@@ -153,7 +153,7 @@ export default function Checkout() {
               <React.Fragment>
                 {getStepContent(activeStep)}
 
-                <div>
+                <div class="create__event__btn" style={{marginBottom: 60}}>
 
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>
