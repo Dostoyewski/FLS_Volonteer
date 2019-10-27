@@ -70,6 +70,7 @@ export default class TabAccount extends Component {
   render() {
     const { userInfo } = this.props;
     console.log(global.shelters);
+    const karma = 150;
     
     var flag = false;
     for (var i = 0; i < global.vlt.length; i++){
@@ -97,7 +98,7 @@ export default class TabAccount extends Component {
       'nachname': global.user_info.last_name,
       'urlVK': global.user_info.id,
       //'profile_image': global.user_info.photo_200,
-      })}).then(function(res){ console.log(res) })
+      })}).then(function(res){  })
       .catch(function(res){ console.log(res) });
 
     }
@@ -135,8 +136,8 @@ export default class TabAccount extends Component {
                     <div className="Account__name Account__level"> Уровень {1}</div>
                   </div>
                   <div className="Account_progress">
-                    <progress value={global.vlt[global.vlt_i].karma} max={1000}></progress><br/>
-                    {global.vlt[global.vlt_i].karma}/{1000}
+                    <progress value={150} max={1000}></progress><br/>
+                    {150}/{1000}
                   </div>
                   </div>
 
@@ -165,7 +166,7 @@ export default class TabAccount extends Component {
                 </div>
                 <center>
                   <div className="mascot">
-                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
+                    <img src='https://media.giphy.com/media/XG0dcmHUNBNOlKlPSy/giphy.gif' />
                   </div>
                   <img src='https://barcode.tec-it.com/barcode.ashx?data=AA1234' alt="Карта волонтера" />
                 </center>
