@@ -123,7 +123,12 @@ export default class TabAccount extends Component {
               </div> */}
 
               <FormLayout>
+
                 <div className="Account__header">
+                  <div className="mascot">
+                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
+                  </div>
+                  <div className="Account__info">
                   <div className="Account__hero">
                     <div className="Account__avatar">
                       <img src={userInfo.photo_200} />
@@ -135,6 +140,8 @@ export default class TabAccount extends Component {
                     <progress value={global.vlt[global.vlt_i].karma} max={1000}></progress><br/>
                     {global.vlt[global.vlt_i].karma}/{1000}
                   </div>
+                  </div>
+
                 </div>
 
                 {/*<img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />*/}

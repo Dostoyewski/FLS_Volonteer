@@ -62,8 +62,9 @@ export default class TabMap extends Component {
         
 
         <div class="loading-element">
-          <img class="loading-element__image" src="https://flevix.com/wp-content/uploads/2019/08/Loading-Icon.gif" width="500" height="500" >
+          <img class="loading-element__image" src="https://media.giphy.com/media/GWYs1fPHqjqI8/giphy.gif" width="500" height="500" >
           </img>
+
         </div>
       </Fragment>      
     );

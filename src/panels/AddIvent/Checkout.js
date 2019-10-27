@@ -152,7 +152,9 @@ export default function Checkout() {
             ) : (
               <React.Fragment>
                 {getStepContent(activeStep)}
-                <div className={classes.buttons}>
+
+                <div>
+
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>
                       Назад
@@ -166,7 +168,9 @@ export default function Checkout() {
                   >
                     {activeStep === steps.length - 1 ? 'Разместить задание' : 'Далее'}
                   </Button>
+
                 </div>
+
               </React.Fragment>
             )}
           </React.Fragment>
