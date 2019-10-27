@@ -93,7 +93,8 @@ export default class EventInfo extends Component {
 																			  'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
 																			 },
 																			 body: JSON.stringify({'id': event.id, 'status': 2, 'user_id': toString(global.userInfo.id)}) })
-                //Выпилил лиц соглашение на EventSent
+                
+                                       //Выпилил лиц соглашение на EventSent
 
                 this.props.hidePopout();
                 this.props.update(PANEL_MAIN, { activeTab: TAB_WORK });

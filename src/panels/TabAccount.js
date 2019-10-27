@@ -84,7 +84,7 @@ export default class TabAccount extends Component {
   
     if (!flag){
       console.log('flag')
-      fetch('https://56e779c6.ngrok.io/api/v1/vlt/create/', {
+      fetch('https://01f1fef5.ngrok.io/api/v1/vlt/create/', {
       method: 'POST', // Method itself
       headers: {
       'Accept': 'application/json',
@@ -126,7 +126,8 @@ export default class TabAccount extends Component {
 
                 <div className="Account__header">
                   <div className="mascot">
-                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
+                    {!global.userInfo.isAdmin && (<img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />)}
+                    {global.userInfo.isAdmin && (<img src='https://sun9-65.userapi.com/c857020/v857020295/20e9e/TWiuhE_bP-E.jpg' />)}
                   </div>
                   <div className="Account__info">
                   <div className="Account__hero">

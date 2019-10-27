@@ -13,7 +13,7 @@ class Shelter(models.Model):
 class Volonteer(models.Model):
     #Неизменяемые
     events_registered = models.CharField(max_length=1000, blank=True)
-    karma = models.FloatField(default=0)
+    karma = models.IntegerField(default=0)
     location = models.CharField(max_length=30, default='Не указан')
     birth_date = models.DateField(null=True, blank=True)
     vorname = models.CharField(max_length=20, blank=True)
@@ -34,7 +34,7 @@ STATUS = (
 )
 
 class Task(models.Model):
-    exp = models.FloatField(default=0)
+    exp = models.IntegerField(default=0)
     description = models.TextField(max_length=1200, blank=True, default='Не заполнено')
     place = models.TextField(max_length=1200, blank=True, default='Не заполнено')
     date = models.DateField(null=True, blank=True)

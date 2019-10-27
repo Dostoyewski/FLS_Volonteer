@@ -50,6 +50,7 @@ class PostSerializer(serializers.Serializer):
 class VolonteerSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     allergy = serializers.BooleanField(default=True)
+    karma = serializers.IntegerField(default=0)
 
     def create(self, validated_data):
         """
@@ -62,5 +63,6 @@ class VolonteerSerializer(serializers.Serializer):
         Update and return an existing `Volonteer` instance, given the validated data.
         """
         instance.allergy = validated_data.get('allergy', instance.allergy)
+        instance.karma = validated_data.get('karma', instance.karma)
         instance.save()
         return instance
