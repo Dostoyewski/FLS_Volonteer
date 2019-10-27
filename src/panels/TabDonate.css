@@ -1,5 +1,10 @@
 .donate_cat {
     width: 20%;
+    border: 2px solid #000;
+}
+
+.img-cat {
+    text-align: center;
 }
 
 .shelter__title {
