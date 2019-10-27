@@ -7,6 +7,9 @@ import vkConnect from '@vkontakte/vk-connect';
 import "./TabLost.css";
 import TabAdmin from "./TabAdmin";
 
+const x = document.getElementById("geo_placeholder");
+
+
 export default class TabLost extends Component {
   static propTypes = {
     update: PropTypes.func.isRequired,
@@ -39,7 +42,9 @@ export default class TabLost extends Component {
     return options;
   }
 
-sending = () => {
+
+
+  sending = () => {
     //.log(vkConnect.send("VKWebAppGetAuthToken", {"app_id": 7175703, "scope": "wall"}))
     vkConnectPromise
       .send('VKWebAppGetAuthToken', {"app_id": 7175703, "scope": "wall, notes, messages"})
@@ -95,6 +100,7 @@ sending = () => {
                   <label htmlFor="dsc">Описание проблемы</label>
                 </div>
                 <div className="input-field col s12">
+
                   <textarea id="place" className="materialize-textarea"></textarea>
                   <label htmlFor="place">Примерное местоположение</label>
                 </div>
@@ -123,7 +129,7 @@ sending = () => {
               </form>
               }
               {this.state.post &&
-              <label className='posted'>Ваш пост отправлен на обработку!</label>
+              <div className='posted'>Ваш пост отправлен на обработку!</div>
               }
             </center>
           </div>
@@ -143,3 +149,4 @@ function WorksheetSelector(props) {
       <TabAdmin></TabAdmin>
   );
 }
+
