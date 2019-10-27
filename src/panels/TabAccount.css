@@ -8,16 +8,15 @@
 
 .Account__header {
   margin: 20px 15px;
-  display: flex;
 }
 .Account__info {
-  flex: 1 1;
+  width: 50%;
+  display: inline-block;
 }
 
 .mascot {
-  flex: 0 1 40%;
-  margin-top: -5%;
-  margi-left: 3%;
+width: 50%;
+  display: inline-block;
 }
 
 .Account__name {

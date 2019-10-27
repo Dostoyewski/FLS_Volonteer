@@ -126,8 +126,8 @@ export default class TabAccount extends Component {
 
                 <div className="Account__header">
                   <div className="mascot">
-                    {!global.userInfo.isAdmin && (<img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />)}
-                    {global.userInfo.isAdmin && (<img src='https://sun9-65.userapi.com/c857020/v857020295/20e9e/TWiuhE_bP-E.jpg' />)}
+                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
+
                   </div>
                   <div className="Account__info">
                   <div className="Account__hero">
