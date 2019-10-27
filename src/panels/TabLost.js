@@ -70,7 +70,7 @@ export default class TabLost extends Component {
         // Handling an error
       });
 
-      fetch('https://50f2d48e.ngrok.io/api/v1/post/send/', {
+      fetch('https://01f1fef5.ngrok.io/api/v1/post/send/', {
         method: 'PUT', // Method itself
         headers: {
         'Accept': 'application/json',

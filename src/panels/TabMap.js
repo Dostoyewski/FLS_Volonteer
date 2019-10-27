@@ -77,7 +77,7 @@ export default class TabMap extends Component {
     "id": 1,
     "title": "Центр помощи бездомным животным \"Лучик\" г. Надым",
     "description": "Приют для бездомных животных города Надым",
-    "image": "https://50f2d48e.ngrok.io/api/v1/shelter/getlist/images/schem.JPG",
+    "image": "https://01f1fef5.ngrok.io/api/v1/shelter/getlist/images/schem.JPG",
     "members": "",
     "urlVK": "141883313"
   },
@@ -85,7 +85,7 @@ export default class TabMap extends Component {
     "id": 2,
     "title": "Приют города Санкт-Петербурга",
     "description": "Приют для бездомных животных",
-    "image": "https://50f2d48e.ngrok.io/api/v1/shelter/getlist/images/no-img.jpg",
+    "image": "https://01f1fef5.ngrok.io/api/v1/shelter/getlist/images/no-img.jpg",
     "members": "",
     "urlVK": "147993097"
   }

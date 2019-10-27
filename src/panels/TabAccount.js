@@ -51,7 +51,7 @@ export default class TabAccount extends Component {
 	
   checkboxChange = () => {
 	  // ХЕНДЛЕР ДЛЯ ЧЕКБОКСА
-	  fetch('https://50f2d48e.ngrok.io/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
+	  fetch('https://01f1fef5.ngrok.io/api/v1/vlt/detail/'+global.vlt[global.vlt_i].id, {
       method: 'PUT', // Method itself
       headers: {
       'Accept': 'application/json',

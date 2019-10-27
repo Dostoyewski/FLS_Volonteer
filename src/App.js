@@ -98,7 +98,7 @@ export default class App extends Component {
     this.RESP('https://01f1fef5.ngrok.io/api/v1/task/getlist/?format=json')
     this.RESPSH('https://01f1fef5.ngrok.io/api/v1/shelter/getlist/?format=json')
     this.RESPVLT('https://01f1fef5.ngrok.io/api/v1/vlt/getlist/?format=json')
-    //this.getJSON('https://50f2d48e.ngrok.io/api/v1/task/getlist/?format=json', this.loglog)
+    //this.getJSON('https://01f1fef5.ngrok.io/api/v1/task/getlist/?format=json', this.loglog)
     console.log(global.jsn)
     console.log(global.shelters)
     console.log(global.vlt)
