@@ -1,15 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { PanelHeader, Button, PanelHeaderBack, Separator, Footer, PopoutWrapper } from '@vkontakte/vkui';
-import {
-  PANEL_MAIN,
-  PANEL_EVENT_SENT,
-  STATUS_DEFAULT,
-  STATUS_REQUESTED,
-  STATUS_APPROVED,
-  PANEL_EVENT_INFO,
-  TAB_WORK
-} from '../constants';
+import { PANEL_MAIN, PANEL_EVENT_SENT, STATUS_DEFAULT, STATUS_REQUESTED, STATUS_APPROVED, PANEL_EVENT_INFO } from '../constants';
+
 import { EventPropType } from '../base';
 import Role from '../Components/Role';
 import './EventInfo.css';
@@ -93,13 +86,9 @@ export default class EventInfo extends Component {
 																			  'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
 																			 },
 																			 body: JSON.stringify({'id': event.id, 'status': 2, 'user_id': toString(global.userInfo.id)}) })
-                
-                                       //Выпилил лиц соглашение на EventSent
 
-                this.props.hidePopout();
-                this.props.update(PANEL_MAIN, { activeTab: TAB_WORK });
-                this.props.updateEventStatus(this.props.event.id, STATUS_REQUESTED);
-                this.props.go(PANEL_MAIN);
+                this.props.update(PANEL_EVENT_SENT, { event });
+                this.props.go(PANEL_EVENT_SENT);
               }}>Подать заявку</Button>}
 
               {event.status === STATUS_REQUESTED &&

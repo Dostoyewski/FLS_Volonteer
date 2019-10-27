@@ -93,7 +93,7 @@ export default class Main extends Component {
 			</div>
         <div className="fixed-action-btn" style={{bottom: 60, left: 0}}>
           <a className="btn-floating btn-large waves-effect waves-light" onClick={this.refreshPage}>
-            <img src="https://icon-library.net/images/icon-refresh/icon-refresh-28.jpg"/>
+            <img src="https://sun9-59.userapi.com/c858520/v858520048/1fdf7/Z-Q02mE8Ruc.jpg"/>
           </a>
         </div>
 
