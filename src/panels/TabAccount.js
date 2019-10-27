@@ -125,10 +125,7 @@ export default class TabAccount extends Component {
               <FormLayout>
 
                 <div className="Account__header">
-                  <div className="mascot">
-                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
 
-                  </div>
                   <div className="Account__info">
                   <div className="Account__hero">
                     <div className="Account__avatar">
@@ -167,6 +164,9 @@ export default class TabAccount extends Component {
                   </div>
                 </div>
                 <center>
+                  <div className="mascot">
+                    <img src='https://media.giphy.com/media/j0H0I4ycvwZHO58mHq/giphy.gif' />
+                  </div>
                   <img src='https://barcode.tec-it.com/barcode.ashx?data=AA1234' alt="Карта волонтера" />
                 </center>
 
